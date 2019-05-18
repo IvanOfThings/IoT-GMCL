@@ -178,17 +178,51 @@ MACs:
 #### RemoveSignal
 
 ```
-    "HWID": [
-      "fe:e3:3f:d3:33:43:d0"
+    "RemoveSignal": [
+	"signal1",
+	"signal2",
+	"signal3"
 			...
     ]
 ```
 
 #### RenameSignal
 
+```
+	"RenameSignal": [
+	    {
+		"signalName": "batteryVoltage",
+		"orgSignalName": "DLHS01.V_TBAT"
+	    },
+	    {
+		"signalName": "pressure",
+		"orgSignalName": "PRDH01.V_PRES"
+	    }
+	]
+```
+		
 #### ScaleSignal
 
-#### ChangeUnit
+```
+	"ScaleSignal": [
+	    {
+		"signal": "batteryVoltage",
+		"EUMax": 1000,
+		"EUMin": 0,
+		"RAWMax": 1000,
+		"RAWMin": 0,
+		"toScale": true
+	    },
+	    {
+		"signal": "pressure",
+		"EUMax": 1000,
+		"EUMin": 0,
+		"RAWMax": 1000,
+		"RAWMin": 0,
+		"toScale": true
+	    }
+	]
+```
 
 #### DevicePrefix
 El Device Prefix nos permite obtener el Nombre por el que la organización conoce la información del disopsitivo al que nos vamos a referir, y para ello se define una función que a partir del tipo de dispositivo y su HWID podemos obtener un identificador únic que podremos transformar en el nombre organizacional.
