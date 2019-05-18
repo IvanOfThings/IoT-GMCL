@@ -188,7 +188,7 @@ MACs:
 
 #### ScaleSignal
 
-#### changeUnit
+#### ChangeUnit
 
 #### DevicePrefix
 El Device Prefix nos permite obtener el Nombre por el que la organización conoce la información del disopsitivo al que nos vamos a referir, y para ello se define una función que a partir del tipo de dispositivo y su HWID podemos obtener un identificador únic que podremos transformar en el nombre organizacional.
