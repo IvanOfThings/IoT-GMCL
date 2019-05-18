@@ -1,0 +1,257 @@
+{
+  2   "definitions": {},
+  3   "$schema": "http://json-schema.org/draft-07/schema#",
+  4   "$id": "v0.1.iot-gmcl-schema",
+  5   "type": "array",
+  6   "title": "The IoT GMCL Schema",
+  7   "items": {
+  8     "$id": "#/items",
+  9     "type": "object",
+ 10     "title": "The Items Schema",
+ 11     "required": [
+ 12       "deviceType",
+ 13       "QIDfunction",
+ 14       "QNfunction",
+ 15       "do"
+ 16     ],
+ 17     "properties": {
+ 18       "deviceType": {
+ 19         "$id": "#/items/properties/deviceType",
+ 20         "type": "string",
+ 21         "title": "The Devicetype Schema",
+ 22         "default": "",
+ 23         "examples": [
+ 24           "deviceT1"
+ 25         ],
+ 26         "pattern": "^(.*)$"
+ 27       },
+ 28       "QIDfunction": {
+ 29         "$id": "#/items/properties/QIDfunction",
+ 30         "type": "object",
+ 31         "title": "The Qidfunction Schema",
+ 32         "required": [
+ 33           "prefix",
+ 34           "middle",
+ 35           "postfix",
+ 36           "device_position",
+ 37           "device_order",
+ 38           "HWID_position",
+ 39           "HWID_order"
+ 40         ],
+ 41         "properties": {
+ 42           "prefix": {
+ 43             "$id": "#/items/properties/QIDfunction/properties/prefix",
+ 44             "type": "string",
+ 45             "title": "The Prefix Schema",
+ 46             "default": "",
+ 47             "examples": [
+ 48               "pre_"
+ 49             ],
+ 50             "pattern": "^(.*)$"
+ 51           },
+ 52           "middle": {
+ 53             "$id": "#/items/properties/QIDfunction/properties/middle",
+ 54             "type": "string",
+ 55             "title": "The Middle Schema",
+ 56             "default": "",
+ 57             "examples": [
+ 58               "_mid_"
+ 59             ],
+ 60             "pattern": "^(.*)$"
+ 61           },
+ 62           "postfix": {
+ 63             "$id": "#/items/properties/QIDfunction/properties/postfix",
+ 64             "type": "string",
+ 65             "title": "The Postfix Schema",
+ 66             "default": "",
+ 67             "examples": [
+ 68               "_post"
+ 69             ],
+ 70             "pattern": "^(.*)$"
+ 71           },
+ 72           "device_position": {
+ 73             "$id": "#/items/properties/QIDfunction/properties/device_position",
+ 74             "type": "integer",
+ 75             "title": "The Device_position Schema",
+ 76             "default": 0,
+ 77             "examples": [
+ 78               1
+ 79             ]
+ 80           },
+ 81           "device_order": {
+ 82             "$id": "#/items/properties/QIDfunction/properties/device_order",
+ 83             "type": "integer",
+ 84             "title": "The Device_order Schema",
+ 85             "default": 0,
+ 86             "examples": [
+ 87               0
+ 88             ]
+ 89           },
+ 90           "HWID_position": {
+ 91             "$id": "#/items/properties/QIDfunction/properties/HWID_position",
+ 92             "type": "integer",
+ 93             "title": "The Hwid_position Schema",
+ 94             "default": 0,
+ 95             "examples": [
+ 96               2
+ 97             ]
+ 98           },
+ 99           "HWID_order": {
+100             "$id": "#/items/properties/QIDfunction/properties/HWID_order",
+101             "type": "integer",
+102             "title": "The Hwid_order Schema",
+103             "default": 0,
+104             "examples": [
+105               0
+106             ]
+107           }
+108         }
+109       },
+110       "QNfunction": {
+111         "$id": "#/items/properties/QNfunction",
+112         "type": "object",
+113         "title": "The Qnfunction Schema",
+114         "required": [
+115           "prefix",
+116           "middle",
+117           "postfix",
+118           "orgName_position",
+119           "orgName_order",
+120           "signal_position",
+121           "signal_order"
+122         ],
+123         "properties": {
+124           "prefix": {
+125             "$id": "#/items/properties/QNfunction/properties/prefix",
+126             "type": "string",
+127             "title": "The Prefix Schema",
+128             "default": "",
+129             "examples": [
+130               "pre_"
+131             ],
+132             "pattern": "^(.*)$"
+133           },
+134           "middle": {
+135             "$id": "#/items/properties/QNfunction/properties/middle",
+136             "type": "string",
+137             "title": "The Middle Schema",
+138             "default": "",
+139             "examples": [
+140               "_mid_"
+141             ],
+142             "pattern": "^(.*)$"
+143           },
+144           "postfix": {
+145             "$id": "#/items/properties/QNfunction/properties/postfix",
+146             "type": "string",
+147             "title": "The Postfix Schema",
+148             "default": "",
+149             "examples": [
+150               "_post"
+151             ],
+152             "pattern": "^(.*)$"
+153           },
+154           "orgName_position": {
+155             "$id": "#/items/properties/QNfunction/properties/orgName_position",
+156             "type": "integer",
+157             "title": "The Orgname_position Schema",
+158             "default": 0,
+159             "examples": [
+160               1
+161             ]
+162           },
+163           "orgName_order": {
+164             "$id": "#/items/properties/QNfunction/properties/orgName_order",
+165             "type": "integer",
+166             "title": "The Orgname_order Schema",
+167             "default": 0,
+168             "examples": [
+169               0
+170             ]
+171           },
+172           "signal_position": {
+173             "$id": "#/items/properties/QNfunction/properties/signal_position",
+174             "type": "integer",
+175             "title": "The Signal_position Schema",
+176             "default": 0,
+177             "examples": [
+178               2
+179             ]
+180           },
+181           "signal_order": {
+182             "$id": "#/items/properties/QNfunction/properties/signal_order",
+183             "type": "integer",
+184             "title": "The Signal_order Schema",
+185             "default": 0,
+186             "examples": [
+187               0
+188             ]
+189           }
+190         }
+191       },
+192       "do": {
+193         "$id": "#/items/properties/do",
+194         "type": "array",
+195         "title": "The Do Schema",
+196         "items": {
+197           "$id": "#/items/properties/do/items",
+198           "type": "object",
+199           "title": "The Items Schema",
+200           "required": [
+202             "HWID"
+207           ],
+208           "properties": {
+209             "DevicePrefix": {
+210               "$id": "#/items/properties/do/items/properties/DevicePrefix",
+211               "type": "object",
+212               "title": "The Deviceprefix Schema"
+239             },
+240             "HWID": {
+241               "$id": "#/items/properties/do/items/properties/HWID",
+242               "type": "array",
+243               "title": "The Hwid Schema",
+244               "items": {
+245                 "$id": "#/items/properties/do/items/properties/HWID/items",
+246                 "type": "string",
+247                 "title": "The Items Schema",
+248                 "default": "",
+249                 "examples": [
+250                   "<HWID1>",
+251                   "<HWID2>"
+252                 ],
+253                 "pattern": "^(.*)$"
+254               }
+255             },
+256             "RemoveSignal": {
+257               "$id": "#/items/properties/do/items/properties/RemoveSignal",
+258               "type": "object",
+259               "title": "The Removesignal Schema"
+297             },
+298             "RenameSignal": {
+299               "$id": "#/items/properties/do/items/properties/RenameSignal",
+300               "type": "object",
+301               "title": "The Renamesignal Schema"
+405             },
+406             "ScaleFunction": {
+407               "$id": "#/items/properties/do/items/properties/ScaleFunction",
+408               "type": "object",
+409               "title": "The Scalefunction Schema"
+410             },
+411             "ScaleSignal": {
+412               "$id": "#/items/properties/do/items/properties/ScaleSignal",
+413               "type": "object",
+414               "title": "The Scalesignal Schema",
+426               "properties": {
+427                 "batteryVoltage": {
+428                   "$id": "#/items/properties/do/items/properties/ScaleSignal/properties/batteryVoltage",
+429                   "type": "object",
+430                   "title": "The Batteryvoltage Schema"
+957                 }
+958               }
+959             }
+960           }
+961         }
+962       }
+963     }
+964   }
+965 }
