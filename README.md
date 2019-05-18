@@ -69,13 +69,13 @@ La función de concatenación para el ID cualificado consta de los campos:
 El ejemplo siguente muestra un ejemplo de configfuración de la función de concatenación para obtener el Qualified ID del dispositivo, si tenemos los valores <deviceType> = "devT1" y el <HWID> = "12345" 
 ```
     "QIDfunction": {
-      "prefix": "pre_",
-      "middle": ".mid.",
-      "postfix": "_post",
-			"deviceType_position": 1,
-			"deviceType_order": 0,
-			"HWID_position": 2,
-			"HWID_order": 0
+	"prefix": "pre_",
+	"middle": ".mid.",
+	"postfix": "_post",
+	"deviceType_position": 1,
+	"deviceType_order": 0,
+	"HWID_position": 2,
+	"HWID_order": 0
     }
 ```
 Tendremos el siguiente valor de Qualified ID como valor resultante:
@@ -84,13 +84,13 @@ Tendremos el siguiente valor de Qualified ID como valor resultante:
 Ejemplo 2:
 ```
     "QIDSymbol": {
-      "prefix": "pre_",
-      "middle": "",
-      "postfix": "_post",
-			"deviceType_position": 1,
-			"deviceType_order": 0,
-			"HWID_position": 1,
-			"HWID_order": 0
+	"prefix": "pre_",
+	"middle": "",
+	"postfix": "_post",
+	"deviceType_position": 1,
+	"deviceType_order": 0,
+	"HWID_position": 1,
+	"HWID_order": 0
     }
 ```
 Tendremos el siguiente valor de Qualified ID como valor resultante:	"pre_devT112345_post"
@@ -98,13 +98,13 @@ Tendremos el siguiente valor de Qualified ID como valor resultante:	"pre_devT112
 Ejemplo 3:
 ```
     "QIDSymbol": {
-      "prefix": "pre_",
-      "middle": "",
-      "postfix": "_post",
-			"deviceType_position": 1,
-			"deviceType_order": 1,
-			"HWID_position": 1,
-			"HWID_order": 0
+	"prefix": "pre_",
+	"middle": "",
+	"postfix": "_post",
+	"deviceType_position": 1,
+	"deviceType_order": 1,
+	"HWID_position": 1,
+	"HWID_order": 0
     }
 ```
 Tendremos el siguiente valor de Qualified ID como valor resultante:	"pre_12345devT1_post"
@@ -117,13 +117,13 @@ La función de concatenación para el Nombre cualificado consta de los campos:
 El ejemplo siguente muestra un ejemplo de configfuración de la función de concatenación para obtener el Qualified Name de la señal, si tenemos los valores <orgName> = "taller" y el <signal> = "temperatura" 
 ```
     "QIDfunction": {
-      "prefix": "pre_",
-      "middle": ".mid.",
-      "postfix": "_post",
-			"orgName_position": 1,
-			"orgName_order": 0,
-			"signal_position": 2,
-			"signal_order": 0
+	"prefix": "pre_",
+	"middle": ".mid.",
+	"postfix": "_post",
+	"orgName_position": 1,
+	"orgName_order": 0,
+	"signal_position": 2,
+	"signal_order": 0
     }
 ```
 Tendremos el siguiente valor de Qualified ID como valor resultante:	"pre_taller.mid.temperatura_post"
@@ -131,13 +131,13 @@ Tendremos el siguiente valor de Qualified ID como valor resultante:	"pre_taller.
 Un ejemplo más habitual sería el siguiente:
 ```
     "QIDfunction": {
-      "prefix": "",
-      "middle": "_",
-      "postfix": "",
-			"orgName_position": 1,
-			"orgName_order": 0,
-			"signal_position": 2,
-			"signal_order": 0
+	"prefix": "",
+	"middle": "_",
+	"postfix": "",
+	"orgName_position": 1,
+	"orgName_order": 0,
+	"signal_position": 2,
+	"signal_order": 0
     }
 ```
 Tendremos el siguiente valor de Qualified ID como valor resultante:	"taller_temperatura"
@@ -200,19 +200,26 @@ La función de relación para obtener el identificador único se define como: Id
 	   f("dev1", "12345") => "dev1.12345"
 	
 ```
-		"DevicePrefix": {
-			"<Device>.<HWID1>": "<OrganizationalName01>",
-			"<Device>.<HWID2>": "<OrganizationalName02>",
-			"<Device>.<HWID3>": "<OrganizationalName03_D1>",
-			"<Device>.<HWID4>": "<OrganizationalName03_D2>"
-		}
+		"DevicePrefix": [
+			{
+				"qualifiedName": "<Device>.<HWID1>",
+				"orgName": "<OrganizationalName01>"
+			},
+			{
+				"qualifiedName": "<Device>.<HWID2>",
+				"orgName": "<OrganizationalName02>"
+			}
+		]
 ```
 La aplicación de este prefijo convertiría por ejemplo la información procedente de un dispositivo de tipo devT1 en el que nuestra organización entiende, como por ejemplo que la infromación viene del taller:
 
 ```
-		"DevicePrefix": {
-			"devT1.12345": "taller"
-		}
+		"DevicePrefix": [
+			{
+				"qualifiedName": "devT1.12345",
+				"orgName": "taller"
+			}
+		]
 ```
 
 A partir de aquí cualquier señal que proviniese de este dispositivo se etiquetaría con un tag que comenzaría con la cadena "taller".
@@ -220,11 +227,17 @@ A partir de aquí cualquier señal que proviniese de este dispositivo se etiquet
 #### RenameSignal
 El Device Prefix nos permite obtener el Nombre por el que la organización conoce la información del disopsitivo al que nos vamos a referir, y para ello se define una función que a partir del tipo de dispositivo y su HWID podemos obtener un identificador únic que podremos transformar en el nombre organizacional.
 ```
-			"RenameSignal": {
-				"batteryVoltage": "V_TBAT",
-				"pressure": "V_PRES",
-				...
-			}
+	"RenameSignal": [
+		{
+			"signalName": "batteryVoltage",
+			"orgSignalName": "BAT"
+		},
+		{
+			"signalName": "pressure",
+			"orgSignalName": "PRES"
+		}
+		...
+	]
 ```
 
 
