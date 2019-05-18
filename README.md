@@ -278,13 +278,12 @@ El Device Prefix nos permite obtener el Nombre por el que la organización conoc
 
 ## Versioning
 
-We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/IvanOfThing/IoT-GMCL/tags). 
+We use [SemVer](http://semver.org/) for versioning. 
 
 ## Authors
 
 * **Iván Perea Fuentes** - *Initial work* - [IvanOfThings](https://github.com/IvanOfThings)
 
-See also the list of [contributors](https://github.com/IvanOfThing/IoT-GMCL/contributors) who participated in this project.
 
 ## License
 
