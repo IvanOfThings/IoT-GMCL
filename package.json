@@ -1,0 +1,36 @@
+{
+  "name": "iot-gmcl",
+  "version": "0.1.0",
+  "description": "A backend GraphQl aplication for GMCL",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/IvanOfThings/IoT-GMCL.git"
+  },
+  "keywords": [
+    "iot"
+  ],
+  "author": "Ivan Perea Fuentes",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/IvanOfThings/IoT-GMCL/issues"
+  },
+  "homepage": "https://github.com/IvanOfThings/IoT-GMCL#readme",
+  "devDependencies": {
+    "eslint": "^5.16.0",
+    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-plugin-import": "^2.17.3"
+  },
+  "dependencies": {
+    "apollo-server": "^2.6.1",
+    "apollo-server-express": "^2.6.1",
+    "graphql": "^14.3.1",
+    "graphql-subscriptions": "^1.1.0",
+    "mongoose": "^5.5.12",
+    "uuid": "^3.3.2"
+  }
+}
